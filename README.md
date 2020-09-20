@@ -3,8 +3,6 @@
 ## September 20, 2020
 ## Web-Scraping-Challenge homework
 
-# --------------------------------
-
 SCRAPING
 
 # NASA Mars News

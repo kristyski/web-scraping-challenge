@@ -2,7 +2,7 @@
 # look in activity 12 03 01-07
 
 # import necessary libraries
-# and pymongo library, which connects our Flask app to our Mongo database.
+# and pymongo library, which connects Flask app to our Mongo database.
 from flask import Flask, render_template, redirect, url_for
 from flask_pymongo import PyMongo
 
@@ -23,6 +23,7 @@ def index():
 @app.route("/scrape")
 def scrape():
     mars_info = mongo.db.mars_info
+    # ?
     mars_info = mission_to_mars.scrape_mars_news()
     # ?
     mars_info.update({}, mars_data, upsert=True)
