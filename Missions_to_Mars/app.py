@@ -1,9 +1,15 @@
+# Step 2 - MongoDB and Flask Application
+# look in activity 12 03 01-07
+
+# import necessary libraries
+# and pymongo library, which connects our Flask app to our Mongo database.
 from flask import Flask, render_template, redirect, url_for
 from flask_pymongo import PyMongo
 
+# create instance of Flask app
 app = Flask(__name__)
 
-# Use flask_pymongo to set up mongo connection
+# Use flask_pymongo to set up mongo connection, from activity 12-03-09
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
 mongo = PyMongo(app)
 
@@ -17,7 +23,7 @@ def index():
 @app.route("/scrape")
 def scrape():
     mars_info = mongo.db.mars_info
-    mars_info = scrape_mars.scrape_mars_news()
+    mars_info = mission_to_mars.scrape_mars_news()
     # ?
     mars_info.update({}, mars_data, upsert=True)
     
