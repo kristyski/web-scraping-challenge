@@ -1,5 +1,3 @@
-<!-- not correct code, just sample -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,19 +5,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mars Info</title>
+  <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
   <div class="container">
     <div class="jumbotron text-center">
-      <!-- Render the data -->
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get the Data!</a></p>
-      <h1>{{ text }}</h1>
+      <h1>Mission To Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">scrape the data</a></p>
+    </div>
+  
+    <div>
+      <h3>Latest Mars News</h3>
+      <h6 style="color: #c1440e">{{ mars_info.news_title }}</h6>
+      <p>{{ mars_info.news_p }}</p>
+    </div>
+    
+    <div class="col-lg-8 col-md-8 col-sm-12">
+      <h3>Featured Mars Image</h3>
+      <img src="{{ mars_info.featured_image_url }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
+    </div>
+
+    <div class="col-md-4">
+      <h3>Mars Facts</h3>
+      {{mars_info.mars_facts | safe}}
     </div>
 
   </div>
-</body>
 
+  <div class="row" id="mars-hemispheres">
+    <h3>Mars Hemispheres</h3>
+    <div class="col-md-3" id="Cerberus">
+        <h3>{{??title of image??]}}</h3>
+        <img src="{{???image url]}}" class="img-thumbnail" alt="Responsive image">
+    </div>
+  </div>    
+
+</body>
 </html>

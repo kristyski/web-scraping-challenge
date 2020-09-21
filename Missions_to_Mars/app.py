@@ -24,20 +24,11 @@ def index():
 @app.route("/scrape")
 def scrape():
     mars_info = mongo.db.mars_info
-    # ?
-    mars_info = mission_to_mars.scrape_mars_news()
-    # ?
+    mars_data = scrape_mars.scrape_all()
     mars_info.update({}, mars_data, upsert=True)
     
-    return redirect(url_for("index"), code=302)
-
+    # return redirect(url_for("index"), code=302)
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-# {% if (variable) %}
-
-# .find_one(),

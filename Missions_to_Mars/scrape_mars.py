@@ -125,5 +125,3 @@ for i in items:
 
 # Display hemisphere_image_urls
 hemisphere_image_urls
-
-ipython nbconvert --to script mission_to_mars.ipynb
