@@ -1,16 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[12]:
-
-
 # Declare Dependencies 
 from bs4 import BeautifulSoup as bs
 from splinter import Browser
 import pandas as pd
-
-
-# In[13]:
 
 
 # Choose the executable path to driver, for Windows specifically; from activity 12-01-05
@@ -20,25 +11,15 @@ browser = Browser("chrome", **executable_path, headless=False)
 
 # NASA Mars News
 
-# In[14]:
-
-
 # Visit NASA news url through splinter module; activity 12-01-01, 02, 03, 05, 07
 url = "https://mars.nasa.gov/news/"
 browser.visit(url)
-
-
-# In[15]:
-
 
 # HTML object
 html = browser.html
 
 # use bs to write to html
 soup = bs(html, "html.parser")
-
-
-# In[16]:
 
 
 # inspect mars.nasa.gov to determine class text for title and paragraph;
@@ -53,16 +34,9 @@ print(news_p)
 
 # JPL Mars Space Images - Featured Image
 
-# In[17]:
-
-
 # Visit Mars Space Images through splinter module
 mars_image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
 browser.visit(mars_image_url)
-
-
-# In[18]:
-
 
 # HTML Object 
 html_image = browser.html
@@ -84,9 +58,6 @@ featured_image_url
 
 
 # Mars Facts
-
-# In[19]:
-
 
 # Visit Mars facts url; using activity 12-01-07
 facts_url = "http://space-facts.com/mars/"
@@ -110,16 +81,9 @@ mars_df.to_html()
 
 # Mars Hemispheres
 
-# In[20]:
-
-
 # Visit hemispheres website through splinter module 
 hemispheres_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
 browser.visit(hemispheres_url)
-
-
-# In[21]:
-
 
 html_hemispheres = browser.html
 
@@ -162,15 +126,4 @@ for i in items:
 # Display hemisphere_image_urls
 hemisphere_image_urls
 
-
-# In[26]:
-
-
 ipython nbconvert --to script mission_to_mars.ipynb
-
-
-# In[ ]:
-
-
-ipython nbconvert --to script mission_t
-
