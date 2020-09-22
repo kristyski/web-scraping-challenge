@@ -24,7 +24,7 @@ soup = bs(html, "html.parser")
 
 # inspect mars.nasa.gov to determine class text for title and paragraph;
 # retrieve latest element that contains news title and news paragraph; activity 12-01-04, 05
-news_title = soup.find("div",class_="content_title").text
+news_title = soup.find("div", class_="content_title").text
 news_p = soup.find("div", class_="article_teaser_body").text
 
 # Display scrapped info 
